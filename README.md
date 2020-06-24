@@ -12,7 +12,7 @@ This project uses an Arduino or ATtiny85 microcontroller with the HX711 load cel
     5V Power Supply
 
 ## Schematic
-[!schematic.png]
+![Schematic](schematic.png)
 
 ## How to Start
 
