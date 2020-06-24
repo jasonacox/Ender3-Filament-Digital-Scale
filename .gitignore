@@ -24,9 +24,16 @@
 *.lai
 *.la
 *.a
-*.lib
+#*.lib
 
 # Executables
 *.exe
 *.out
 *.app
+
+# Others
+*.bak
+*.pro
+*.pcb
+fp-info-cache
+*.kicad_pcb
