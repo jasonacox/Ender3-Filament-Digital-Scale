@@ -58,14 +58,14 @@
     CONFIGURATION SECTION - Update these values
 */
 // Arduino Pin settings - UPDATE this section for your circuit
-const int LOADCELL_DOUT_PIN = 2;  // HX711 DT Pin             (ATtiny85: 1)
-const int LOADCELL_SCK_PIN = 3;   // HX711 SK Pin             (ATtiny85: 2)
-#define CLK 4                     // TM1637 Display CLK Pin   (ATtiny85: 3)
-#define DIO 5                     // TM1637 Display DIO Pin   (ATtiny85: 4)
-#define BUTTON 8                  // Tare Button - Pulled up  (ATtiny85: 0)
+const int LOADCELL_DOUT_PIN = 1;  // HX711 DT Pin             (ATtiny85: 1)
+const int LOADCELL_SCK_PIN = 2;   // HX711 SK Pin             (ATtiny85: 2)
+#define CLK 3                     // TM1637 Display CLK Pin   (ATtiny85: 3)
+#define DIO 4                     // TM1637 Display DIO Pin   (ATtiny85: 4)
+#define BUTTON 0                  // Tare Button - Pulled up  (ATtiny85: 0)
 
 // Turn on debug mode for setting callibration
-#define DEBUG true
+#define DEBUG false
 
 // Calibration values - UPDATE this section for your load cell - see instructions above
 #define CAL_OFFSET -148550       // HX711 reading with no weight
@@ -97,7 +97,7 @@ void setup() {
 
   // Display Startup Sequence
   for (int x = 0; x < 5; x++) {
-    display.showStr ing(" On ");
+    display.showString(" On ");
     delay(200);
     display.clear();
     delay(100);
