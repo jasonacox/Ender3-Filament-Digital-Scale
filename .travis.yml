@@ -15,7 +15,7 @@ install:
  # - git clone https://github.com/bogde/HX711 /usr/local/share/arduino/libraries/HX711
  # - git clone https://github.com/jasonacox/TM1637TinyDisplay.git /usr/local/share/arduino/libraries/TM1637TinyDisplay
 script:
-  - arduino --verify --board arduino:avr:uno --pref sketchbook.path="$PWD" -v $PWD/src/attiny85-hx711-tm1637-weight-display/attiny85-hx711-tm1637-weight-display.ino
+  - arduino --verify --board arduino:avr:uno --pref sketchbook.path="$PWD" $PWD/src/attiny85-hx711-tm1637-weight-display/attiny85-hx711-tm1637-weight-display.ino
 notifications:
   email:
     on_success: change
