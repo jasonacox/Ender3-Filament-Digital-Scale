@@ -10,7 +10,6 @@
     XGFEDCBA
   0b00000000 = 0x00
 */
-#include <TM1637TinyDisplay.h>
 
 /* Animation Data - HGFEDCBA Map */
 const uint8_t ANIMATION[46][4] = {
