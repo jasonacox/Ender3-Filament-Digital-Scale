@@ -1,4 +1,5 @@
 # Ender3-Filament-Digital-Scale
+[![Build Status](https://travis-ci.org/jasonacox/Ender3-Filament-Digital-Scale.svg?branch=master)](https://travis-ci.org/jasonacox/Ender3-Filament-Digital-Scale)
 This project is to add a load cell to the filament spool holder of a Creality Ender 3 Pro 3D-printer to measure and display weight of spool.  Using the tare function of the scale on an empty spool, the user can determine the amount of filament (in grams) remaining on a spool.
 
 This project uses an Arduino or ATtiny85 microcontroller with the HX711 load cell module for weight measurement and a TM1637 4-digit LED display. 
