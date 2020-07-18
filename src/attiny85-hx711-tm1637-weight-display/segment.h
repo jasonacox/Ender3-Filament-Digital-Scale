@@ -10,7 +10,7 @@
     XGFEDCBA
   0b00000000
 */
-#include <TM1637Display.h>
+#include <TM1637TinyDisplay.h>
 
 const uint8_t SEG_START[12][4] =
 {

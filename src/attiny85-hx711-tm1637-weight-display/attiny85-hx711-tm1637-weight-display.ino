@@ -7,16 +7,16 @@
 
   Components:
       ATiny85 Microcontroller
-      TM1636 4 Digit 7-Segement LED Display 
+      TM1636 4 Digit 7-Segment LED Display 
       Load Cell
       HX711 Load Cell Amplifier (ADC)
       100uF Electrolytic Capacitor
       5V Power Supply
 
   Callibration: 
-      This sketch requires that you calibrate the load cell.  This invovles the following steps:
+      This sketch requires that you calibrate the load cell.  This involves the following steps:
       1) Run the sketch with DEBUG true (using a Arduino Uno or other microcontroller with serial)
-      2) Record the "HX711 reading" values whith NO load on the scale - this is your "offset_value"
+      2) Record the "HX711 reading" values with NO load on the scale - this is your "offset_value"
       3) Use an trusted scale and weigh an object (grams) - record this value as your "known_value"
       4) Place the object on the load cell and record the "HX711 reading" - this is "calibration_value"
       5) Compute the ratio_value = (calibration_value - offset_value) / known_value
@@ -38,9 +38,9 @@
 #include "HX711.h"
 #include "segment.h"
 
-// Include TM1637Display Library
+// Include TM1637TinyDisplay Library https://github.com/jasonacox/TM1637TinyDisplay
 #include <Arduino.h>
-#include <TM1637Display.h>
+#include <TM1637TinyDisplay.h>
 
 // HX711 circuit wiring
 const int LOADCELL_DOUT_PIN = 1;
@@ -49,7 +49,7 @@ const int LOADCELL_SCK_PIN = 2;
 // Pins definitions for TM1637 and can be changed to other ports
 #define CLK 3
 #define DIO 4
-TM1637Display display(CLK, DIO);
+TM1637TinyDisplay display(CLK, DIO);
 
 // Pin for Tare button
 #define BUTTON 0

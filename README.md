@@ -14,7 +14,14 @@ This project uses an Arduino or ATtiny85 microcontroller with the HX711 load cel
 ## Schematic
 ![Schematic](schematic.png)
 
-## How to Start
+## How to Build
+
+### Print Mount and Display Box
+The filament scale mounts on top of the Ender 3 top rail where the filament spool is located.  You will need to print the load cell mount and the LED display box. This is available on [Thingiverse](https://www.thingiverse.com/thing:4545434) or [Tinkercad](https://www.tinkercad.com/things/9OpwKBmKX0j-ender3-loadcell-filament-scale-mount).
+
+See example build pictures below.
+
+## Setup
 
 ### Calibration
 This sketch requires that you calibrate the load cell.  This involves the following steps:
@@ -29,8 +36,18 @@ This sketch requires that you calibrate the load cell.  This involves the follow
 The TARE button uses PB0. If you use the Tiny AVR Programmer from Sparkfun
 it drives an LED on PB0 and once the sketch is uploaded, the TTiny will read PB0 as LOW and assume you wish to TARE the scale. You will need to remove the the chip from the programmer after uploading to get it to work correctly in the circuit.
 
+This code uses the [TM1637TinyDisplay](https://github.com/jasonacox/TM1637TinyDisplay) and [HX711](https://github.com/bogde/HX711) Arduino libraries that can be installed via the Arduino IDE. 
+
 ### Function
 On start the circuit will read the last TARE value from EEPROM and display the the current weight. Press and hold the TARE button and the current weight value will be recorded in EEPROM and subtracted from the current reading to "Zero" out the scale.
+
+## Build Pictures
+
+![Build1](https://www.jasonacox.com/wordpress/wp-content/uploads/2020/06/Screen-Shot-2020-06-24-at-7.37.11-PM.png)
+![Build2](https://www.jasonacox.com/wordpress/wp-content/uploads/2020/06/Screen-Shot-2020-06-24-at-7.35.40-PM.png)
+![Build3](https://www.jasonacox.com/wordpress/wp-content/uploads/2020/06/Screen-Shot-2020-06-24-at-7.36.16-PM.png)
+![Build4](https://www.jasonacox.com/wordpress/wp-content/uploads/2020/06/Screen-Shot-2020-06-24-at-7.36.31-PM.png)
+![Final](https://www.jasonacox.com/wordpress/wp-content/uploads/2020/06/Screen-Shot-2020-06-24-at-7.41.25-PM.png)
 
 ## References
 * Library for HX711 https://github.com/bogde/HX711

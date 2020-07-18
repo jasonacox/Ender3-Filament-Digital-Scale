@@ -37,3 +37,4 @@
 *.pcb
 fp-info-cache
 *.kicad_pcb
+.DS_Store
