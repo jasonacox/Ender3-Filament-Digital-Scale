@@ -25,12 +25,12 @@ See example build pictures below.
 
 ### Calibration
 This sketch requires that you calibrate the load cell.  This involves the following steps:
-1) Run the sketch with DEBUG true (using a Arduino Uno or other microcontroller with serial)
-2) Record the "HX711 reading" values with NO load on the scale - this is your "offset_value"
-3) Use an trusted scale and weigh an object (grams or kg) - record this value as your "known_value"
-4) Place the object on the load cell and record the "HX711 reading" - this is "calibration_value"
-5) Compute the ratio_value = (calibration_value - offset_value) / known_value
-6) Edit the #defines below for CAL_RATIO and CAL_OFFSET
+1. Run the sketch with DEBUG true (using a Arduino Uno or other microcontroller with serial)
+2. Record the "HX711 reading" values with NO load on the scale - this is your "`CAL_OFFSET`"
+3. Use an trusted scale and weigh an object (grams or kg) - record this value as your "`KNOWN-VALUE`"
+4. Place the object on the load cell and record the "HX711 reading" - this is "`CAL_VALUE`"
+5. Compute the `CAL_RATIO` = (`CAL_VALUE` - `CAL_OFFSET`) / `KNOWN-VALUE`
+6. Edit the #defines below for `CAL_RATIO` and `CAL_OFFSET`
 
 ### Programming Notes
 The TARE button uses PB0. If you use the Tiny AVR Programmer from Sparkfun
