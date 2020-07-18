@@ -1,5 +1,6 @@
-# Ender3-Filament-Digital-Scale
+# Ender3-Filament-Digital-Scale #
 [![Build Status](https://travis-ci.org/jasonacox/Ender3-Filament-Digital-Scale.svg?branch=master)](https://travis-ci.org/jasonacox/Ender3-Filament-Digital-Scale)
+
 This project is to add a load cell to the filament spool holder of a Creality Ender 3 Pro 3D-printer to measure and display weight of spool.  Using the tare function of the scale on an empty spool, the user can determine the amount of filament (in grams) remaining on a spool.
 
 This project uses an Arduino or ATtiny85 microcontroller with the HX711 load cell module for weight measurement and a TM1637 4-digit LED display. 
@@ -28,10 +29,10 @@ See example build pictures below.
 This sketch requires that you calibrate the load cell.  This involves the following steps:
 1. Run the sketch with DEBUG true (using a Arduino Uno or other microcontroller with serial)
 2. Record the "HX711 reading" values with NO load on the scale - this is your "`CAL_OFFSET`"
-3. Use an trusted scale and weigh an object (grams or kg) - record this value as your "`KNOWN-VALUE`"
-4. Place the object on the load cell and record the "HX711 reading" - this is "`CAL_VALUE"
-5. Compute the `CAL_RATIO` = (`CAL_VALUE` - `CAL_OFFSET`) / `KNOWN-VALUE`
-6. Edit the #defines below for `CAL_RATIO` and `CAL_OFFSET`
+3. Use a trusted scale and weigh an object (grams or kg) - record this value as your "`KNOWN-VALUE`"
+4. Place the object on the load cell and record the "HX711 reading" - this is "`CAL_VALUE`"
+6. Edit the #defines in the code for your `CAL_OFFSET`, `KNOWN-VALUE` and `CAL_VALUE`
+7. The compiler will compute `CAL_RATIO` = (`CAL_VALUE` - `CAL_OFFSET`) / `KNOWN-VALUE`
 
 ### Programming Notes
 The TARE button uses PB0. If you use the Tiny AVR Programmer from Sparkfun
@@ -39,8 +40,10 @@ it drives an LED on PB0 and once the sketch is uploaded, the TTiny will read PB0
 
 This code uses the [TM1637TinyDisplay](https://github.com/jasonacox/TM1637TinyDisplay) and [HX711](https://github.com/bogde/HX711) Arduino libraries that can be installed via the Arduino IDE. 
 
-### Function
-On start the circuit will read the last TARE value from EEPROM and display the the current weight. Press and hold the TARE button and the current weight value will be recorded in EEPROM and subtracted from the current reading to "Zero" out the scale.
+### Tare Function
+On start the circuit will read the last TARE value from EEPROM and display the the current weight. Press and hold the TARE button and the current weight value will be recorded in EEPROM and subtracted from the current reading to "Zero" out the scale. The display will flash "Tare" to indicate it has been zeroed.
+
+To accurately measure the amount of filament left in a spool, place an empty spool on the spool holder before pressing the TARE button.
 
 ## Build Pictures
 
