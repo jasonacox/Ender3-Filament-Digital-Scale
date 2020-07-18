@@ -29,7 +29,7 @@ See example build pictures below.
 This sketch requires that you calibrate the load cell.  This involves the following steps:
 1. Run the sketch with DEBUG true (using a Arduino Uno or other microcontroller with serial)
 2. Record the "HX711 reading" values with NO load on the scale - this is your "`CAL_OFFSET`"
-3. Use a trusted scale to weigh an object like a can of soda, and record this value as your "`KNOWN-VALUE`". Use the unit of measure you want for the scale, like grams or kg).
+3. Use a trusted scale to weigh an object like a can of soda, and record this value as your "`KNOWN-VALUE`" (Note: use the unit of measure you want for the scale, like grams or kg).
 4. Place the object on the load cell and record the "HX711 reading" - this is "`CAL_VALUE`"
 6. Edit the #defines in the code for your `CAL_OFFSET`, `KNOWN-VALUE` and `CAL_VALUE`
 7. The compiler will compute `CAL_RATIO` = (`CAL_VALUE` - `CAL_OFFSET`) / `KNOWN-VALUE`
