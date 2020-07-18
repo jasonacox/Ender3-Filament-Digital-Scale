@@ -58,11 +58,11 @@
     CONFIGURATION SECTION - Update these values
 */
 // Arduino Pin settings - UPDATE this section for your circuit
-const int LOADCELL_DOUT_PIN = 2;  // HX711 DT Pin
-const int LOADCELL_SCK_PIN = 3;   // HX711 SK Pin
-#define CLK 4                     // TM1637 Display CLK Pin
-#define DIO 5                     // TM1637 Display DIO Pin
-#define BUTTON 8                  // Tare Button - Pulled up / Push to low
+const int LOADCELL_DOUT_PIN = 2;  // HX711 DT Pin             (ATtiny85: 1)
+const int LOADCELL_SCK_PIN = 3;   // HX711 SK Pin             (ATtiny85: 2)
+#define CLK 4                     // TM1637 Display CLK Pin   (ATtiny85: 3)
+#define DIO 5                     // TM1637 Display DIO Pin   (ATtiny85: 4)
+#define BUTTON 8                  // Tare Button - Pulled up  (ATtiny85: 0)
 
 // Turn on debug mode for setting callibration
 #define DEBUG true
@@ -97,7 +97,7 @@ void setup() {
 
   // Display Startup Sequence
   for (int x = 0; x < 5; x++) {
-    display.showString(" On ");
+    display.showStr ing(" On ");
     delay(200);
     display.clear();
     delay(100);
